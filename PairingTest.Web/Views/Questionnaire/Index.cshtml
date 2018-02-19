@@ -1,0 +1,35 @@
+﻿@model PairingTest.Web.Models.QuestionnaireViewModel
+
+<html>
+<head>
+    <title>@Model.QuestionnaireTitle</title>
+</head>
+<body>
+<h2>@Model.QuestionnaireTitle</h2>
+
+@{
+    int counter = 0;
+    string qName = "questionAnswerFor";
+}
+
+@using (Html.BeginForm("Index", "Questionnaire", FormMethod.Post))
+{
+    foreach (var question in Model.QuestionsText)
+    {
+        <br /><br />
+        <b>@question</b>
+        <br />
+        qName = "QuestionAnswerFor" + counter++;
+        <input type="text" name="@qName" placeholder="Answer.." required/>
+                
+    }
+    <br/><br/>
+    <input type="submit" value="Submit" />
+}
+<div>  
+    @Html.Partial("_Answers")
+</div>
+    
+
+</body>
+</html>

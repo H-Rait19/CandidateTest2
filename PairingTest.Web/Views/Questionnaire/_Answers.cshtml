@@ -1,0 +1,23 @@
+﻿<div>
+    @{
+        int answerCount = 1;
+
+        if (Model.Results != null)
+        {
+            foreach (bool res in Model.Results)
+            {
+                if (res)
+                {
+                    <br /><br />
+                    <b>Answer @answerCount is correct</b>
+                }
+                else
+                {
+                    <br /><br />
+                    <b>Answer @answerCount is incorrect</b>
+                }
+                answerCount++;
+            }
+        }
+    }
+</div>

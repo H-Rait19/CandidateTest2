@@ -9,7 +9,7 @@ namespace PairingTest.Unit.Tests.Web
     public class QuestionnaireControllerTests
     {
         [Test]
-        public void ShouldGetQuestions()
+        public void ShouldGetQuestionsTitle()
         {
             //Arrange
             var expectedTitle = "Geography Questions";
